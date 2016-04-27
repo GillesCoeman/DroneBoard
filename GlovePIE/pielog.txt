@@ -1,0 +1,57 @@
+(0, 27-apr-2016 19:11:48) Initializing PieLog
+(0, 27-apr-2016 19:11:48) Initializing filemode variable
+(0, 27-apr-2016 19:11:48) Initializing PieSpeech
+(0, 27-apr-2016 19:11:48) Initializing PieVariables
+(0, 27-apr-2016 19:11:48) Initializing PieCursorUnit
+(0, 27-apr-2016 19:11:48) Initializing PieMouse
+(0, 27-apr-2016 19:11:48) Initializing PieKeyboard
+(0, 27-apr-2016 19:11:48) Initializing PieInput
+(0, 27-apr-2016 19:11:48) Initializing PieOSC
+(0, 27-apr-2016 19:11:48) Initializing PiePie
+(0, 27-apr-2016 19:11:48) Initializing PieFunction
+(0, 27-apr-2016 19:11:48) Initializing PieStatement
+(0, 27-apr-2016 19:11:48) Initializing PieExpression
+(0, 27-apr-2016 19:11:48) Initializing PieJoystick
+(0, 27-apr-2016 19:11:48) Initializing PieP5
+(0, 27-apr-2016 19:11:48) Initializing PieMidi
+(0, 27-apr-2016 19:11:48) Initializing PiePPJoy
+(0, 27-apr-2016 19:11:48) Initializing PieRemote
+(0, 27-apr-2016 19:11:48) Initializing Pie Speech Recognition
+(0, 27-apr-2016 19:11:48) Initializing PieScreen
+(0, 27-apr-2016 19:11:48) GetMonitorEDID
+(0, 27-apr-2016 19:11:48) Initializing PieWIndow
+(0, 27-apr-2016 19:11:48) Initializing PieCursors
+(0, 27-apr-2016 19:11:48) Initializing PieZ800
+(0, 27-apr-2016 19:11:48) Initializing PieIntersense
+(0, 27-apr-2016 19:11:48) Initializing PieFastrak
+(0, 27-apr-2016 19:11:48) Initializing PiePPT
+(0, 27-apr-2016 19:11:48) Initializing PieTrackIR
+(0, 27-apr-2016 19:11:48) Initializing PiePinch
+(0, 27-apr-2016 19:11:48) Initializing PieBird
+(0, 27-apr-2016 19:11:48) Initializing PieFiveDT
+(0, 27-apr-2016 19:11:48) Starting main
+(0, 27-apr-2016 19:11:48) Application object initialized
+(0, 27-apr-2016 19:11:48) Creating main window
+(0, 27-apr-2016 19:11:48) EditorForm.Create
+(0, 27-apr-2016 19:11:48) Checking command line parameters:
+(0, 27-apr-2016 19:11:48)   BalanceBoardInput.PIE
+(0, 27-apr-2016 19:11:48) ClearMidiGui
+(0, 27-apr-2016 19:11:48)   /run
+(0, 27-apr-2016 19:11:48) Creating debug window
+(0, 27-apr-2016 19:11:48) Assigning exception handler
+(0, 27-apr-2016 19:11:48) Creating debug remote control window
+(0, 27-apr-2016 19:11:48) Running application
+(0, 27-apr-2016 19:11:48) RunButton
+(0, 27-apr-2016 19:11:48) Compile>Run
+(0, 27-apr-2016 19:11:48) Compile>Compile
+(0, 27-apr-2016 19:11:48) CompileCode
+(0, 27-apr-2016 19:11:48) StartingInputMonitor CompileJoystick
+(0, 27-apr-2016 19:11:48) EnumerateJoysticks
+(0, 27-apr-2016 19:11:48) Enumerated... BadGamePad = False
+(0, 27-apr-2016 19:11:48) StartCompileTimeP5 False
+(0, 27-apr-2016 19:11:48) StoppingInputMonitor CompileJoystick
+(0, 27-apr-2016 19:11:48) StartRuntime
+(0, 27-apr-2016 19:11:48) StartKeyboardMonitor
+(0, 27-apr-2016 19:11:48) StartingInputMonitor keyboard
+(0, 27-apr-2016 19:11:48) StartRuntimeJoystick
+(0, 27-apr-2016 19:11:48) ************************* False
