@@ -1,0 +1,42 @@
+﻿// Change the numbers on the next four lines to increase or decrease the sensitivity of that direction.
+var.Forward = 1.5
+var.Back = 1.75
+var.Left = 1.5
+var.Right = 1
+Wiimote.BalanceBoard.Led = true
+//in order to initialize the board when you are on it, press Left Button of the mouse.
+If mouse.LeftButton = true
+var.Winit = Wiimote.BalanceBoard.Weight
+var.FLinit = (Wiimote.BalanceBoard.RawFrontLeft)
+var.BLinit = (Wiimote.BalanceBoard.RawFrontRight)
+var.FRinit = (Wiimote.BalanceBoard.RawBackleft)
+var.BRinit = (Wiimote.BalanceBoard.RawBackRight)
+Else
+mouse.LeftButton = false
+End If
+var.W = (Wiimote.BalanceBoard.Weight - var.Winit)
+var.FL = ((Wiimote.BalanceBoard.RawFrontLeft - var.FLinit) / 2000)
+var.BL = ((Wiimote.BalanceBoard.RawFrontRight - var.BLinit) / 2000)
+var.FR = ((Wiimote.BalanceBoard.RawBackleft - var.FRinit) / 2000)
+var.BR = ((Wiimote.BalanceBoard.RawBackRight - var.BRinit) / 2000)
+// Forward : var.Yinit = 0 to -1
+If (var.FL + var.FR) > (var.BL + var.BR)
+var.Yinit = ((((var.FL + var.FR) / 2) * -1) *var.Forward)
+EndIf
+// Back : var.Yinit = 0 to 1
+If (var.BL + var.BR) > (var.FL + var.FR)
+var.Yinit = (((var.BL + var.BR) / 2) *var.Back)
+EndIf
+// Left  : var.Xinit = 0 to -1
+If (var.FL + var.BL) > (var.FR + var.BR)
+var.Xinit = ((((Var.FL + var.BL) / 2) * -1) *var.Left)
+EndIf
+// Right : var.Xinit = 0 to 1
+If (var.FR + var.BR) > (var.FL + var.BL)
+var.Xinit = (((var.FR + var.BR) /2) *var.Right)
+EndIf
+//send information via MIDI ( 2 Values > 2 Channels)
+mouse.CursorPosX =  ((var.Xinit+1)*127)/2
+mouse.CursorPosY =  ((var.Yinit+1)*127)/2
+//GlovePIE Debug
+debug = "X: "+ var.Xinit +" Y: "+ var.Yinit

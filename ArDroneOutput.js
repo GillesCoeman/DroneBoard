@@ -1,4 +1,4 @@
-console.log('V1.1');
+console.log('V1.2');
 
 // Importeer Modules
 var osc = require('C:/Program Files/nodejs/node_modules/node-osc');
@@ -8,9 +8,10 @@ var arDrone = require('C:/Program Files/nodejs/node_modules/ar-drone');
 var client = arDrone.createClient();
 var oscServer = new osc.Server(3333, '0.0.0.0');
 
-// Maak de vier vaste variablen aan.
+// Maak de vaste variablen aan.
 var fly = false, yaxes = 0, xaxes = 0, jump = false;
 var oFly = false, oYaxes = 0, oXaxes = 0, oJump = false;
+var speed = 0.2; // Getal tussen 0 en 1
 
 // Luister naar de UDP OSC stream
 oscServer.on("message", function (msg, rinfo) { 
@@ -29,36 +30,33 @@ oscServer.on("message", function (msg, rinfo) {
 
 	console.log(fly, yaxes, xaxes, jump);
 
-	flyDrone(fly, yaxes, xaxes, jump);
+	flyDrone();
 });
 
-function flyDrone(fly, yaxes, xaxes, jump){
+function flyDrone(){
 	if (fly != oFly) {
-		if (fly == 'true') {
-			console.log("Opstijgen ...");
+		if (fly == 'true')
 			client.takeoff();
-		} else {
-			console.log("Landen ...");
+		else 
 			client.stop();
-		}
 
 		oFly = fly;
 	}
 
 	if (yaxes != oYaxes) {
 		if (yaxes >= 0)
-			client.front(yaxes);
+			client.front(yaxes * speed);
 		else
-			client.back(-yaxes);
+			client.back(-yaxes * speed);
 
 		yaxes = oYaxes;
 	}
 
 	if (xaxes != oXaxes) {
 		if (xaxes >= 0)
-			client.right(xaxes);
+			client.right(xaxes * speed);
 		else
-			client.left(-xaxes);
+			client.left(-xaxes * speed);
 
 		xaxes = oXaxes;
 	}
