@@ -1,4 +1,4 @@
-console.log('V1.2');
+console.log('V1.3');
 
 // Importeer Modules
 var osc = require('C:/Program Files/nodejs/node_modules/node-osc');
@@ -20,10 +20,10 @@ oscServer.on("message", function (msg, rinfo) {
 		fly = msg[1];
 
 	if (msg[0] == '/yaxes')
-		yaxes = Math.round(((msg[1] / 20) - 1) * 100) / 100;
+		yaxes = Math.round(((msg[1] / 20) - 2) * 100) / 100;
 
 	if (msg[0] == '/xaxes')
-		xaxes = Math.round(((msg[1] / 20) - 1) * 100) / 100;
+		xaxes = Math.round(((msg[1] / 20) - 2) * 100) / 100;
 
 	if (msg[0] == '/jump')
 		jump = msg[1];
@@ -38,7 +38,7 @@ function flyDrone(){
 		if (fly == 'true')
 			client.takeoff();
 		else 
-			client.stop();
+			client.land();
 
 		oFly = fly;
 	}

@@ -1,19 +1,23 @@
-﻿// Change the numbers on the next four lines to increase or decrease the sensitivity of that direction.
+﻿// Gevoeligheid van het bord
 var.Forward = 1.5
 var.Back = 1.75
 var.Left = 1.5
 var.Right = 1
 
 Wiimote.BalanceBoard.Led = true
+var.Winit = (Wiimote.BalanceBoard.Weight);
 
-var.Winit = Wiimote.BalanceBoard.Weight
-var.FLinit = (Wiimote.BalanceBoard.RawFrontLeft)
-var.BLinit = (Wiimote.BalanceBoard.RawFrontRight)
-var.FRinit = (Wiimote.BalanceBoard.RawBackleft)
-var.BRinit = (Wiimote.BalanceBoard.RawBackRight)
+// Initialiseer het bord
+if keyboard.Enter
+   var.BRinit = (Wiimote.BalanceBoard.RawBackRight);
+   var.FLinit = (Wiimote.BalanceBoard.RawFrontLeft);
+   var.BLinit = (Wiimote.BalanceBoard.RawFrontRight);
+   var.FRinit = (Wiimote.BalanceBoard.RawBackleft);
+Else
+    debug = "Oh No"
+EndIf
 
-//in order to initialize the board when you are on it, press Left Button of the mouse.
-var.W = (Wiimote.BalanceBoard.Weight - var.Winit)
+var.W = (Wiimote.BalanceBoard.Weight)
 var.FL = ((Wiimote.BalanceBoard.RawFrontLeft - var.FLinit) / 2000)
 var.BL = ((Wiimote.BalanceBoard.RawFrontRight - var.BLinit) / 2000)
 var.FR = ((Wiimote.BalanceBoard.RawBackleft - var.FRinit) / 2000)
@@ -21,9 +25,9 @@ var.BR = ((Wiimote.BalanceBoard.RawBackRight - var.BRinit) / 2000)
 
 // Is Stepped On?
 If (int(var.W) > int(40))
-var.SteppedOn = true
+var.SteppedOn = 'true'
 Else
-var.SteppedOn = false
+var.SteppedOn = 'false'
 EndIf
 
 // Forward : var.Yinit = 0 to -1
@@ -51,8 +55,8 @@ var.yvalue = var.Yinit;
 var.xvalue = var.Xinit;
 
 // Waarden voorbereiden voor verzenden
-var.yencoded = ((var.yvalue + 1) * 20)
-var.xencoded = ((var.xvalue + 1) * 20)
+var.yencoded = ((var.yvalue + 2) * 20)
+var.xencoded = ((var.xvalue + 2) * 20)
 
 // Waarden verzenden
 SendOsc("127.0.0.1", 3333, "fly", var.SteppedOn)
